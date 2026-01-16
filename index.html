@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcuShop Pro | Compra por WhatsApp</title>
+  <meta name="description" content="EcuShop Pro: gadgets y tendencias. Envíos a todo Ecuador. Pago Contra Entrega. Pide por WhatsApp." />
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111111;
+      --muted:#5a5f6a;
+      --border:#e7e7ee;
+      --accent:#111111;
+    }
+    *{box-sizing:border-box}
+    body{font-family: Arial, sans-serif; margin:0; background:var(--bg); color:var(--text);}
+    a{color:inherit}
+    .wrap{max-width:980px; margin:0 auto; padding:0 16px;}
+    header{background:var(--card); border-bottom:1px solid var(--border);}
+    nav{display:flex; gap:14px; align-items:center; justify-content:space-between; padding:14px 0;}
+    .nav-links a{margin-right:14px; text-decoration:none; color:var(--text); font-weight:600; font-size:14px;}
+    .nav-links a:hover{text-decoration:underline;}
+    .badge{font-size:12px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); background:#fff;}
+    .hero{padding:34px 0 26px;}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:center;}
+    h1{margin:0 0 10px; font-size:36px; line-height:1.1;}
+    p{margin:0; line-height:1.6; color:var(--muted);}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 14px; border-radius:12px; border:1px solid var(--accent); text-decoration:none; font-weight:700;}
+    .btn.primary{background:var(--accent); color:#fff;}
+    .btn.primary:hover{opacity:.92}
+    .btn.ghost:hover{background:#111; color:#fff}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px;}
+    main{padding:18px 0 70px;}
+    .grid{display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));}
+    .product{display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center;}
+    .product img{width:100%; border-radius:14px; border:1px solid var(--border); background:#fff;}
+    .kpis{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:12px;}
+    .kpi{border:1px solid var(--border); border-radius:14px; padding:12px; background:#fff;}
+    .kpi b{display:block; font-size:14px;}
+    .kpi span{font-size:12px; color:var(--muted);}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted);}
+    .list li{margin:6px 0}
+    .small{font-size:14px; color:var(--muted);}
+    .pill{display:inline-flex; gap:8px; align-items:center; padding:8px 10px; border-radius:999px; border:1px solid var(--border); background:#fff; font-size:13px; color:var(--muted);}
+    .faq details{border:1px solid var(--border); border-radius:14px; padding:12px 14px; background:#fff;}
+    .faq details + details{margin-top:10px;}
+    .faq summary{cursor:pointer; font-weight:700; color:var(--text);}
+    footer{padding:22px 0; color:var(--muted);}
+    .wa-float{
+      position:fixed; right:16px; bottom:16px; z-index:9999;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px; border-radius:999px;
+      background:#25D366; color:#fff; text-decoration:none;
+      font-weight:800; box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+    .wa-float:hover{filter:brightness(.95)}
+    .wa-dot{width:10px; height:10px; border-radius:50%; background:#fff; opacity:.9}
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns:1fr}
+      .product{grid-template-columns:1fr}
+      h1{font-size:32px}
+      .kpis{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // WhatsApp Ecuador: 593 + número sin el 0 inicial
+    const WA_NUMBER = "593998190299";
+    const WA_TEXT = "Hola, vengo de la web de EcuShop Pro. Quiero precio, tiempo de entrega y pago contra entrega. Mi ciudad es: ";
+    const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT)}`;
+  </script>
+
+  <header id="inicio">
+    <div class="wrap">
+      <nav>
+        <div class="nav-links">
+          <a href="#inicio">Inicio</a>
+          <a href="#producto">Productos</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#faq">Preguntas</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <span class="badge">Envíos a todo Ecuador • Pago Contra Entrega</span>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <h1>✨ EcuShop Pro</h1>
+            <p class="small">
+              <b>Soluciones inteligentes para tu día a día.</b><br/>
+              Seleccionamos los mejores gadgets y tendencias mundiales para ti.<br/>
+              📍 Envíos garantizados desde Quito/Guayaquil a todo el Ecuador.<br/>
+              💵 Compra segura con <b>Pago Contra Entrega</b>.<br/>
+              📩 ¡Haz tu pedido ya por WhatsApp!
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" id="ctaTop" href="#" target="_blank">📲 Pedir por WhatsApp</a>
+              <a class="btn ghost" href="#producto">Ver productos</a>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="pill">🛡️ Garantía por defectos</span>
+              <span class="pill">🚚 Envíos a todo Ecuador</span>
+              <span class="pill">💵 Pago Contra Entrega</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <b>Para hacer tu pedido (rápido)</b>
+            <p class="small" style="margin-top:6px;">
+              Envíanos tu <b>ciudad</b> y te confirmamos <b>precio</b>, <b>entrega</b> y <b>disponibilidad</b>.
+            </p>
+            <ul class="list">
+              <li>Ciudad:</li>
+              <li>Producto que te interesa:</li>
+              <li>Pago Contra Entrega: Sí</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <section class="card" id="producto">
+        <div class="product">
+          <div>
+            <!-- Cambia este nombre por tu imagen: ejemplo: producto1.png -->
+            <img src="TU_IMAGEN.png" alt="Producto destacado" />
+            <p class="small" style="margin-top:10px;">
+              *Sube fotos reales y, si puedes, un video corto: mejora mucho la conversión.
+            </p>
+          </div>
+
+          <div>
+            <h2 style="margin:0 0 8px;">Producto destacado</h2>
+            <p class="small">
+              Coloca aquí el nombre del producto y una descripción breve (beneficio principal + uso real).
+            </p>
+
+            <div class="kpis">
+              <div class="kpi">
+                <b>Calidad</b>
+                <span>Selección de productos top</span>
+              </div>
+              <div class="kpi">
+                <b>Entrega</b>
+                <span>Confirmamos según tu ciudad</span>
+              </div>
+              <div class="kpi">
+                <b>Pago</b>
+                <span>Contra Entrega (seguro)</span>
+              </div>
+            </div>
+
+            <div class="cta-row" style="margin-top:14px;">
+              <a class="btn primary" id="ctaProduct" href="#" target="_blank">📲 Consultar por WhatsApp</a>
+              <a class="btn ghost" href="#contacto">Contacto</a>
+            </div>
+
+            <p class="small" style="margin-top:10px;">
+              <b>Tip:</b> Te respondemos con precio final + tiempo de entrega para tu ciudad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="beneficios" style="margin-top:14px;">
+        <h2 style="margin:0 0 8px;">¿Por qué comprar en EcuShop Pro?</h2>
+        <ul class="list">
+          <li>✅ Envíos a todo Ecuador (desde Quito/Guayaquil)</li>
+          <li>✅ Pago Contra Entrega (compra segura)</li>
+          <li>✅ Garantía por defectos</li>
+          <li>✅ Atención directa por WhatsApp</li>
+        </ul>
+      </section>
+
+      <section class="card faq" id="faq" style="margin-top:14px;">
+        <h2 style="margin:0 0 10px;">Preguntas frecuentes</h2>
+
+        <details>
+          <summary>¿En cuánto llega?</summary>
+          <p class="small">Depende de tu ciudad y disponibilidad. Escríbenos y te confirmamos el tiempo exacto.</p>
+        </details>
+
+        <details>
+          <summary>¿Cómo funciona el Pago Contra Entrega?</summary>
+          <p class="small">Pagas al recibir el producto. Te explicamos cobertura y condiciones por WhatsApp.</p>
+        </details>
+
+        <details>
+          <summary>¿Qué cubre la garantía?</summary>
+          <p class="small">Cubre defectos. Te indicamos el proceso y tiempo según el producto.</p>
+        </details>
+      </section>
+
+      <section class="card" id="contacto" style="margin-top:14px;">
+        <h2 style="margin:0 0 8px;">Contacto</h2>
+        <p class="small">Escríbenos y te respondemos rápido:</p>
+        <ul class="list">
+          <li><b>WhatsApp:</b> <span id="waShown">+593 998 190 299</span></li>
+          <li><b>Ubicación:</b> Ecuador (Quito / Guayaquil)</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn primary" id="ctaBottom" href="#" target="_blank">📲 Escribirme por WhatsApp</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="small">© <span id="year"></span> EcuShop Pro. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" target="_blank" aria-label="WhatsApp">
+    <span class="wa-dot"></span> WhatsApp
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const ids = ["ctaTop","ctaProduct","ctaBottom","waFloat"];
+    ids.forEach(id => document.getElementById(id).setAttribute("href", WA_LINK));
+  </script>
+</body>
+</html>
